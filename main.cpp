@@ -1,5 +1,7 @@
-// This is a multi-threaded program using C++ that calculates various statistical
-// values for a list of numbers.
+/**
+ * This is a multi-threaded program using C++ that calculates various statistical
+ * values for a list of numbers.
+ */
 #include <pthread.h>
 #include <cstdio>
 
@@ -19,7 +21,7 @@ void* findMax(void *arg);
  * worker threads which calculate the average value and finds the minimum/maximum value.
  */
 int main() {
-    /* Determine number of elements */
+    /* Determine number of elements (size of array) */
     printf("How many numbers would you like to process? ");
     scanf("%d", &size);
 
@@ -89,11 +91,3 @@ void* findMax(void *arg) {
     max = temp;
     pthread_exit(NULL);
 }
-
-/* initialize an array of the integers to be passed */
-//    int *nums = (int*)malloc((argc - 1)*sizeof(int));
-//    int i = 1;
-//    for(i = 1; i < argc ; i++){
-//        nums[i-1] = atoi(argv[i]);
-//        size++;
-//    }
